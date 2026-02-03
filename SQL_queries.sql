@@ -22,9 +22,6 @@ FROM customer
 WHERE shipping_type in ('Standard', 'Express')
 GROUP BY shipping_type;
 
-
-SELECT * FROM customer;
-
 --Q5. Do subscribed customers spend more? Compare average spend and total revenue 
 --	  between subscribers and non-subscribers.
 SELECT subscription_status, ROUND(AVG(purchase_amount),2) as "Average Spending",
@@ -82,4 +79,3 @@ SELECT
 FROM customer
 GROUP BY age_group
 ORDER BY total_revenue desc;
-
