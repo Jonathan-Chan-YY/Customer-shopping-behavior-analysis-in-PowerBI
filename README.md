@@ -34,7 +34,8 @@ The dataset contains **3,900 customer records** with the following information:
 ```
 ├── customer_shopping_behavior.csv           # Raw dataset (3,900 records)
 ├── customer_shopping_behavior_analysis.py   # Python script for data cleaning and loading
-├── customer_behavior_sql_queries.sql        # 10 business intelligence queries
+├── SQL_queries.sql                          # Business intelligence SQL queries
+├── customer_behavior_dashboard.pbix         # Power BI interactive dashboard
 └── README.md                                # Project documentation
 ```
 
@@ -114,8 +115,21 @@ The project includes 10 pre-written SQL queries for business intelligence:
    - Database: `customer_behavior`
 
 2. Navigate to the database and open Query Tool
-3. Copy queries from `customer_behavior_sql_queries.sql`
+3. Copy queries from `SQL_queries.sql`
 4. Execute to view results
+
+### Connecting Power BI to PostgreSQL
+
+1. Open Power BI Desktop
+2. Click **Get Data** → Search for **"PostgreSQL database"**
+3. Enter connection details:
+   - **Server:** `localhost`
+   - **Database:** `customer_behavior`
+4. Select **Database** authentication:
+   - **User name:** `postgres`
+   - **Password:** `postgres`
+5. Click **Connect** and select the `customer` table
+6. Open `customer_behavior_dashboard.pbix` to view the interactive dashboard
 
 ### Database Connection Details
 
@@ -140,7 +154,7 @@ The analysis answers important business questions such as:
 
 ## Future Enhancements
 
-- [ ] Power BI dashboard development
+- [x] Power BI dashboard development
 - [ ] Advanced statistical analysis and predictive modeling
 - [ ] Customer lifetime value (CLV) calculation
 - [ ] Product recommendation system
